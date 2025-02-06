@@ -1,12 +1,8 @@
-name: Main
+name: Before Merge
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  merge_group:
+    types: [checks_requested]
 
 jobs:
   build:
