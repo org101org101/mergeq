@@ -1,9 +1,7 @@
 name: Main
 
 on:
-  push:
-    branches:
-      - main
+  merge_group:
   pull_request:
     branches:
       - main
@@ -13,5 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - if: ${{ github.event_name == 'merge_group' }}
+        run: echo "Merge Group"
+
+      - if: ${{ github.event_name == 'pull_request' }}
+        run: echo "Pull Request"
 
       - run: cargo check --tests --benches --all-features
