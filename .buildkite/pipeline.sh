@@ -2,8 +2,8 @@
 
 cat <<EOF | tee /dev/tty | buildkite-agent pipeline upload
 steps:
-  - name: "checks"
-    command: "cargo check"
+  - name: "check"
+    command: "./check.sh"
     timeout_in_minutes: 20
     agents:
       queue: "default"
