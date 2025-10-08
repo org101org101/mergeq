@@ -2,6 +2,6 @@
 
 set -e
 
-cargo check
+cargo test
 
 git diff --exit-code
