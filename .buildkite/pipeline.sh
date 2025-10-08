@@ -15,8 +15,10 @@ steps:
     timeout_in_minutes: 20
     agents:
       queue: "default"
-EOF 
+EOF
+
 else
+
   cat <<EOF | tee /dev/tty | buildkite-agent pipeline upload
 steps:
   - name: "main"
@@ -25,4 +27,5 @@ steps:
     agents:
       queue: "default"
 EOF
+
 fi
