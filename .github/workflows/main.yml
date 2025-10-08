@@ -9,13 +9,28 @@ on:
       - checks_requested
 
 jobs:
-  build:
+  pull_request:
+    if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - shell: bash
         run: |
+          echo "Pull Request"
           set -e
           cargo check
           git diff --exit-code
+
+  merge_queue_check:
+    if: ${{ github.event_name == 'merge_group' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - shell: bash
+        run: |
+          echo "Merge Queue"
+          set -e
+          cargo check
+          git diff --exit-code
+
