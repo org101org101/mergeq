@@ -6,3 +6,4 @@ edition = "2021"
 [dependencies]
 cfg-if = "1.0.1"
 log = "0.4.28"
+test-case = "3"
