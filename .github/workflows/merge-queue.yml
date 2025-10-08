@@ -1,0 +1,17 @@
+name: Merge Queue
+
+on:  
+  merge_group:
+    types: [checks_requested]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - shell: bash
+        run: |
+          set -e
+          cargo check
+          git diff --exit-code

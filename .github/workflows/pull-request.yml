@@ -1,7 +1,6 @@
-name: Main
+name: Pull Request
 
-on:
-  merge_group:
+on:  
   pull_request:
 
 jobs:
