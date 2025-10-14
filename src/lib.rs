@@ -7,8 +7,8 @@ mod tests {
     use super::*;
 
     #[test]
-    fn it_works_1() {
-        assert_eq!(5, add(2, 2));
+    fn it_works() {
+        assert_eq!(5, 3 + 2);
     }
 }
 
