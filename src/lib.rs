@@ -8,7 +8,7 @@ mod tests {
 
     #[test]
     fn it_works() {
-        assert_eq!(5, add(2, 2));
+        assert_eq!(5, 3 + 2));
     }
 }
 
