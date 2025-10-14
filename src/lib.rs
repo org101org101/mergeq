@@ -7,7 +7,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn it_works_1() {
+    fn it_works() {
         assert_eq!(5, add(2, 2));
     }
 }
